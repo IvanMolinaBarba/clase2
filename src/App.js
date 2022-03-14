@@ -1,12 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from 'react-bootstrap/Navbar';
+
+
+let booleanTst = true;
+
+const color = booleanTst ? 'red' : 'blue';
+
+const styles = {
+  title: {
+    backgroundColor: color,
+  },
+};
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Navbar />
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p style={styles.title} o>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
