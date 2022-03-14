@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Navbar />
+        <NavBar />
         <img src={logo} className="App-logo" alt="logo" />
         <p style={styles.title} o>
           Edit <code>src/App.js</code> and save to reload.
