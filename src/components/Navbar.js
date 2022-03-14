@@ -1,57 +1,26 @@
 import React from 'react';
 import Container from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from 'react-bootstrap/Navbar';
+import Navbar from 'react-bootstrap/Navbar'; 
 
 
-const Navbar = () => {
+const NavBar = () => {
     return (
-        <>
-        <Navbar bg="light">
-          <Container>
-            <Navbar.Brand href="#home">Brand link</Navbar.Brand>
-          </Container>
-        </Navbar>
-        <br />
-        <Navbar bg="light">
-          <Container>
-            <Navbar.Brand>Brand text</Navbar.Brand>
-          </Container>
-        </Navbar>
-        <br />
-        <Navbar bg="dark">
-        <Container>
-          <Navbar.Brand href="#home">
-            <img
-              src="/logo.svg"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-              alt="React Bootstrap logo"
-            />
-          </Navbar.Brand>
-        </Container>
-        </Navbar>
-        <br />
-        <Navbar bg="dark" variant="dark">
-          <Container>
-            <Navbar.Brand href="#home">
-              <img
-                alt=""
-                src="/logo.svg"
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-              />{' '}
-            React Bootstrap
-            </Navbar.Brand>
-          </Container>
-        </Navbar>
-      </> 
+      <Navbar>
+      <Container>
+        <Navbar.Brand href="#home">Venta de Cartas</Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text>
+            Ingresar como: <a href="#login">Iván Molina</a>
+          </Navbar.Text>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     );
     
     
 };
 
 
-export default Navbar;
+export default NavBar;
