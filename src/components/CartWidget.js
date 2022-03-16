@@ -1,15 +1,14 @@
-import { Navbar } from "react-bootstrap";
-import NavBar from './components/Navbar';
+import React from 'react';
 
 
+const CartWidget = () => {
+    return (
+        
+        <ion-icon name="cart-sharp" color="light" size="large"></ion-icon>
+);
+};
 
-function NavBar () {
-    return <>
-            <h3>POKECARDS</h3>
-            <CartWidget />
-            <ion-icon name="cart-outline"></ion-icon>
-    </>;
+export default CartWidget;
 
-    }   
 
 
