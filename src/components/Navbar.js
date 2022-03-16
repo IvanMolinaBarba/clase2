@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar'; 
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import logo from '../logo.svg' 
 
 
 
@@ -12,7 +13,7 @@ const NavBar = () => {
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
       <img
-        src="/logo.svg"
+        src={logo} 
         width="30"
         height="30"
         className="d-inline-block align-top"
@@ -24,14 +25,14 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Damaged</Nav.Link>
-            <Nav.Link href="#pricing">Played</Nav.Link>
+            <Nav.Link href="#damaged">Damaged</Nav.Link>
+            <Nav.Link href="#played">Played</Nav.Link>
             <NavDropdown title="Pokemones" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Agua</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Fuego</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Tierra</NavDropdown.Item>
+              <NavDropdown.Item href="#water">Agua</NavDropdown.Item>
+              <NavDropdown.Item href="#fire">Fuego</NavDropdown.Item>
+              <NavDropdown.Item href="#land">Tierra</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Hierba</NavDropdown.Item>
+              <NavDropdown.Item href="#Herb">Hierba</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
@@ -44,6 +45,7 @@ const NavBar = () => {
       </Container>
     </Navbar>
     );
+
     
     
 };
