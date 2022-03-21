@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/Navbar';
 import FunctionalComponent from './components/Functional';
 
-
 let booleanTst = true;
 
 const color = booleanTst ? 'pink' : 'blue';
@@ -16,15 +15,36 @@ const styles = {
   typesContainer: {
   display:'flex',
   flexDirection:'column',
-  
-  
   },
 };
 
 const personaFuncion = {
   nombre:'Ivan',
   apellido:'Molina',
+};
 
+const listProduct = [
+  {
+    nombre: "Charizard",
+    stock:1,
+    initial:2500
+  },
+  {
+    nombre: "Blastoise",
+    stock:2,
+    initial:2000
+  },
+  {
+    nombre: "Venasaur",
+    stock:3,
+    initial:1200
+  },
+];
+
+const stock = 10;
+const initial=1;
+const onAdd = (contador) =>{
+    console.log('click' , contador);
 };
 
 function App() {
@@ -33,26 +53,18 @@ function App() {
       <header className="App-header">
         <NavBar />
         <div style={styles.typesContainer}>
-          <FunctionalComponent
-          nombre={personaFuncion.nombre}
-          apellido={personaFuncion.apellido}
-          children={<img src={logo} className="App-logo" alt="logo" />} 
-        />
+          {listProduct.map((producto) => (
+              <FunctionalComponent
+              stock={producto.stock}
+              initial={producto.initial}
+              onAdd={onAdd}
+              />
+
+              ))}
+
         </div>
-        <p style={styles.title} o>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
 }
-
 export default App;
