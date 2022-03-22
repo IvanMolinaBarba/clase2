@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/Navbar';
@@ -18,27 +17,29 @@ const styles = {
   },
 };
 
-const personaFuncion = {
-  nombre:'Ivan',
-  apellido:'Molina',
-};
-
 const listProduct = [
   {
     nombre: "Charizard",
-    stock:1,
-    initial:2500
+    stock:10,
+    initial:1
   },
   {
     nombre: "Blastoise",
-    stock:2,
-    initial:2000
+    stock:20,
+    initial:1
   },
   {
     nombre: "Venasaur",
-    stock:3,
-    initial:1200
+    stock:30,
+    initial:1
   },
+
+  {
+    nombre: "Bulbasaur",
+    stock:20,
+    initial:1
+  },
+
 ];
 
 const stock = 10;

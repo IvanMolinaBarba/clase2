@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-const ItemListContainer = ({stock , initial , onAdd}) => {
+
+const ItemCount = ({stock , initial , onAdd}) => {
     const [contador, setContador] = useState(initial);
 
     const clickSum = () => {
@@ -41,4 +42,4 @@ const ItemListContainer = ({stock , initial , onAdd}) => {
     );
 };
 
-export default ItemListContainer;
+export default ItemCount;
