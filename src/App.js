@@ -1,7 +1,9 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import NavBar from './components/Navbar';
 import FunctionalComponent from './components/Functional';
+import ItemListContainer from './components/ItemListContainer';
 
 let booleanTst = true;
 
@@ -53,9 +55,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBar />
+        <ItemListContainer />
         <div style={styles.typesContainer}>
           {listProduct.map((producto) => (
-              <FunctionalComponent
+              <ItemCount
               stock={producto.stock}
               initial={producto.initial}
               onAdd={onAdd}
