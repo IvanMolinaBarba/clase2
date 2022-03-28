@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Item = (producto) => {
+const Item = ({producto}) => {
   return (
     <div className="card" style={{width:'18rem'}}>
   <img src={producto.img} className="card-img-top" alt={producto.nombre}/>

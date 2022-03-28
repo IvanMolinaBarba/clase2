@@ -4,6 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import NavBar from './components/Navbar';
 import ItemCount from './components/Functional';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 let booleanTst = true;
 
@@ -56,6 +57,7 @@ function App() {
       <header className="App-header">
         <NavBar />
         <ItemListContainer />
+        <ItemDetailContainer/>
         <div style={styles.typesContainer}>
           {listProduct.map((producto) => (
               <ItemCount
