@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
     useEffect(()=>{
         SetCargandin(true)
         getProducts
-        .then((res) => setProductDetail(res.find((item) => item.id ==='01')))
+        .then((res) => setProductDetail(res.find((item) => item.id ==='1')))
         .catch((error) => console.log(error))
         .finally(()=> SetCargandin(false))
     }, [])
