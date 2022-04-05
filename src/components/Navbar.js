@@ -25,14 +25,14 @@ const NavBar = () => {
   </Container>
       <Container>
       
-        <Navbar.Brand href="#home">Cartas Pokemon</Navbar.Brand>
+       
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-        
+                <Link to="/" className="header-link">Cartas Pokemon</Link>
                 <Link to="/category/productos" className="header-link">Productos</Link>
-                <Link to="/category/nosotros" className="header-link">Nosotros</Link>
-                <Link to="/category/contacto" className="header-link">Contacto</Link>
+                <Link to="/nosotros" className="header-link">Nosotros</Link>
+                <Link to="/contacto" className="header-link">Contacto</Link>
             
           </Nav>
           <Nav>

@@ -1,11 +1,26 @@
+import { useEffect } from "react"
+
+
 const Nosotros = () => {
 
+    const handleClick = (e) => {
+        e.stopPropagation()
+        console.log("Click en componente")
+      
+    }
+
+    useEffect(() => {
+        window.addEventListener('click', () => {
+            console.log('Click en Window ')
+        })
+    }, [])
+
     return (
-        <div>
+        <div onClick={handleClick}>
             <h2>Nosotros</h2>
             <hr/>
         </div>
     )
 }
 
-export default Nosotros 
+export default Nosotros

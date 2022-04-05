@@ -23,32 +23,32 @@ const styles = {
   },
 };
 
-const listProduct = [
-  {
-    nombre: "Charizard",
-    stock:10,
+ const listProduct = [
+   {
+   nombre: "Charizard",
+   stock:10,
+   initial:1
+},
+ {
+   nombre: "Blastoise",
+   stock:20,
+   initial:1
+},
+   {
+     nombre: "Venasaur",
+     stock:30,
     initial:1
-  },
-  {
-    nombre: "Blastoise",
-    stock:20,
-    initial:1
-  },
-  {
-    nombre: "Venasaur",
-    stock:30,
-    initial:1
-  },
+   },
 
   {
     nombre: "Bulbasaur",
-    stock:20,
+   stock:20,
     initial:1
-  },
+ },
 
 ];
 
-const stock = 10;
+ const stock = 10;
 const initial=1;
 const onAdd = (contador) =>{
     console.log('click' , contador);

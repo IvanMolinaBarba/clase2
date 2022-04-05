@@ -1,30 +1,77 @@
-import React from 'react'
-import { useNavigate } from "react-router-dom"
+import { useContext, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { CartContext } from "../../context/CartContext"
+import ItemCount from "../ItemCount/ItemCount"
+import Select from "../Select/Select"
 
-const ItemDetail = ({productDetail}) => {
-    const {nombre, img, precio, desc} = productDetail
+const options = [
+    {value: 'L', text: 'Large'},
+    {value: 'M', text: 'Medium'},
+    {value: 'S', text: 'Small'}
+]
+// const options = [
+//     {value: 'rojo', text: 'Rojo'},
+//     {value: 'verde', text: 'Verde'},
+//     {value: 'azul', text: 'Azul'},
+//     {value: 'violeta', text: 'Violeta'},
+//     {value: 'negro', text: 'Negro'},
+// ]
 
-const navigate = useNavigate()
+const ItemDetail = ({id, nombre, desc, img, precio, category, stock}) => {
 
-const handleNavigate = () => {
-  navigate(-1)
-}
+    const { addItem, isInCart } = useContext(CartContext)
+
+    const navigate = useNavigate()
+
+    const handleNavigate = () => {
+        navigate(-1)
+    }
+
+    const [cantidad, setCantidad] = useState(1)
+    const [color, setColor] = useState('L')
 
 
-  return (
-    <div>
-        <h2>Detalle del producto : {nombre} </h2>
-        <img src={img} alt={nombre}/>
-        <h4>Precio : {precio}</h4>
-        <p>{desc}</p>
+    const agregarAlCarrito = () => {
+        const itemToAdd = {
+            id,
+            nombre,
+            precio,
+            img,
+            color,
+            cantidad
+        }
 
-        <hr/>
+        addItem(itemToAdd)
+    }
+
+    return (
+        <div>
+            <h2>{nombre}</h2>
+            <img src={img} alt={nombre}/>
+            <p>{desc}</p>
+            <h4>Precio: ${precio}</h4>
+            <small>Stock disponible: {stock}</small>
+            <Select 
+                options={options}
+                onSelect={setColor}
+            />
+            
+            {
+                !isInCart(id)
+                    ? <ItemCount 
+                            max={stock}
+                            cantidad={cantidad}
+                            setCantidad={setCantidad}
+                            onAdd={agregarAlCarrito}
+                        />
+                    : <Link to="/cart" className="btn btn-success d-block my-3">Terminar mi compra</Link>
+            }
+            
+            <hr/>
             <button className="btn btn-outline-primary" onClick={handleNavigate}>Volver</button>
-
-    </div>
-  )
-
-
+            {/* <button className="btn btn-outline-primary" onClick={() => navigate(-1)}>Volver</button> */}
+        </div>
+    )
 }
 
 export default ItemDetail
