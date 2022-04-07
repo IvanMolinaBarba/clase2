@@ -8,6 +8,9 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Contacto from "./components/Contacto/Contacto";
 import Nosotros from "./components/Nosotros/Nosotros";
+import { CartContext} from "./context/CartContext";
+import {useState} from "react";
+import Cart from './components/Cart/Cart';
 
 let booleanTst = true;
 
@@ -55,21 +58,46 @@ const onAdd = (contador) =>{
 };
 
 function App() {
+  
+  const [cart,setCart] = useState ([])
+
+  const addItem = (item) => {
+    setCart( [...cart,item] )
+  }
+
+const isInCart = (id) => {
+  return cart.some(prod => prod.id === id)
+}
+
+const cartQuantity = () => {
+  return cart.reduce((acc, prod) => acc += prod.cantidad, 0)
+}
+
   return (
+<CartContext.Provider value={{
+  cart,
+  addItem,
+  isInCart,
+  cartQuantity
+  }}>
+
+
     <div className="App">
       <header className="App-header">
         <BrowserRouter>
-        <NavBar />
+        <NavBar/>
         <Routes>
             <Route path="/" element={ <ItemListContainer/> }/>
             <Route path="/category/:categoryId" element={ <ItemListContainer/> }/>
             <Route path="/detail/:itemId" element={ <ItemDetailContainer/> } />
             <Route path="/contacto" element={ <Contacto/> }/>
             <Route path="/nosotros" element={ <Nosotros/> }/>
+            <Route path="/cart" element={ <Cart/> }/>
 
             <Route path="*" element={ <Navigate to="/"/> }/>
           </Routes>
         </BrowserRouter>
+      
         <div style={styles.typesContainer}>
           {listProduct.map((producto) => (
               <ItemCount
@@ -83,7 +111,9 @@ function App() {
         </div>
       </header>
     </div>
-    
+    </CartContext.Provider>
   );
 }
+
+
 export default App;
