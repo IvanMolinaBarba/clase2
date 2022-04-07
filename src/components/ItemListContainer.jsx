@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import { useParams } from "react-router-dom"
 import { getProducts } from '../mocks/fakeApi';
-import {ItemList }  from './ItemList';
+import {ItemList}  from './ItemList';
 
 const ItemListContainer = () => {
 

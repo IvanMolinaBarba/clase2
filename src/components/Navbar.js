@@ -29,7 +29,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-                <Link to="*" className="header-link">Cartas Pokemon</Link>
+                <Link to="/" className="header-link">Cartas Pokemon</Link>
                 <Link to="/category/productos" className="header-link">Productos</Link>
                 <Link to="/nosotros" className="header-link">Nosotros</Link>
                 <Link to="/contacto" className="header-link">Contacto</Link>

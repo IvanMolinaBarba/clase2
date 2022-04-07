@@ -8,9 +8,8 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Contacto from "./components/Contacto/Contacto";
 import Nosotros from "./components/Nosotros/Nosotros";
-import { CartContext} from "./context/CartContext";
-import {useState} from "react";
 import Cart from './components/Cart/Cart';
+import { CartProvider } from './context/CartContext';
 
 let booleanTst = true;
 
@@ -59,28 +58,8 @@ const onAdd = (contador) =>{
 
 function App() {
   
-  const [cart,setCart] = useState ([])
-
-  const addItem = (item) => {
-    setCart( [...cart,item] )
-  }
-
-const isInCart = (id) => {
-  return cart.some(prod => prod.id === id)
-}
-
-const cartQuantity = () => {
-  return cart.reduce((acc, prod) => acc += prod.cantidad, 0)
-}
-
   return (
-<CartContext.Provider value={{
-  cart,
-  addItem,
-  isInCart,
-  cartQuantity
-  }}>
-
+    <CartProvider>
 
     <div className="App">
       <header className="App-header">
@@ -110,8 +89,11 @@ const cartQuantity = () => {
 
         </div>
       </header>
+      
     </div>
-    </CartContext.Provider>
+    </CartProvider>
+
+    
   );
 }
 
