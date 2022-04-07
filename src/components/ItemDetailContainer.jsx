@@ -1,39 +1,27 @@
-import { useEffect, useState } from "react"
-import { Container } from "react-bootstrap"
-import { useParams } from "react-router-dom"
+import React, { useEffect, useState } from 'react'
 import { getProducts } from '../mocks/fakeApi'
-import ItemDetail from "../ItemDetail/ItemDetail"
+import ItemDetail from './ItemDetail'
 
 
 const ItemDetailContainer = () => {
+    const [productDetail, setProductDetail] = useState({})
+    const [cargandin, setCargandin] = useState (false)
 
-    const [item, setItem] = useState(null)
-    const [loading, setLoading] = useState(true)
+    useEffect(()=>{
+        setCargandin(true)
+        getProducts
+        .then((res) => setProductDetail(res.find((item) => item.id ==='01')))
+        .catch((error) => console.log(error))
+        .finally(()=> setCargandin(false))
+    }, [])
 
-    const { itemId } = useParams()
-
-    useEffect(() => {
-        setLoading(true)
-
-        getProducts()
-            .then((res) => {
-                setItem( res.find((prod) => prod.id === Number(itemId)) )
-            })
-            .finally(() => {
-                setLoading(false)
-            })
-
-    }, [itemId])
 
     return (
-        <Container className="my-5">
-            {
-                loading
-                ? <h2>Cargando...</h2>
-                : <ItemDetail {...item}/>
-            }
-        </Container>
-    )
-}
+        <div>
+            {cargandin ? <p>Carganding</p> : <ItemDetail productDetail={productDetail}/>}
+            </div>
+      )
+    }
+    export default ItemDetailContainer
 
-export default ItemDetailContainer
+

@@ -7,6 +7,7 @@ const ItemListContainer = () => {
     const [listaProductos, setListaProductos] = useState([]);
     const [cargando,setCargando] = useState(false)
 
+
     const {categoryId} = useParams()
     console.log(categoryId)
 
@@ -22,18 +23,16 @@ useEffect(()=>{
     }
 })
 
-  .catch((error) => console.log(error))
+.catch((error) => console.log(error))
   .finally (()=> setCargando(false))
+
 }, [categoryId])
 
 
-
-      return (
-    <div>
-        {cargando ? <p>Loading..</p> : <ItemList listaProductos={listaProductos}/>}
-    </div>
-  )
+return (
+  <div>
+      {cargando ? <p>Loading..</p> : <ItemList listaProductos={listaProductos}/>}
+  </div>
+)
 }
-
-
 export default ItemListContainer

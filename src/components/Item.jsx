@@ -3,15 +3,15 @@ import { Button, Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
 
-const Item = ( {id, nombre, precio, img, desc}) => {
+const Item = ( {producto,desc,id}) => {
     return (
         <Card style={{ width: '16rem', margin: '5px' }}>
-            <Card.Img variant="top" src={img} alt={nombre}/>
+            <Card.Img variant="top" src={producto.img} alt={producto.nombre}/>
             <Card.Body>
-                <Card.Title>{nombre}</Card.Title>
+                <Card.Title>{producto.nombre}</Card.Title>
                 
                 <Card.Text>
-                    Precio: ${precio}
+                    Precio: ${producto.precio}
                 </Card.Text>
                 
                 <Link to={`/detail/${id}`}><Button variant="primary">Ver más</Button></Link>
