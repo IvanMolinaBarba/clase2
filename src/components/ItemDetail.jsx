@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { CartContext } from '../context/CartContext'
 import ItemCount from './ItemCount/ItemCount'
 import Select from './Select/Select'
+import { Link } from 'react-router-dom';
 
 const options = [
   {value: 'rojo', text: 'Rojo'},
@@ -16,7 +17,7 @@ const ItemDetail = ({productDetail}) => {
 const { addItem , isInCart } = useContext (CartContext)
 
 
-const {nombre, img, precio, desc} = productDetail
+const {id ,stock , nombre, img, precio, desc} = productDetail
 
 const navigate = useNavigate()
 
