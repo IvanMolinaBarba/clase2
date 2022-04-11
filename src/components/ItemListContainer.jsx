@@ -7,7 +7,6 @@ const ItemListContainer = () => {
     const [listaProductos, setListaProductos] = useState([]);
     const [cargando,setCargando] = useState(false)
 
-
     const {categoryId} = useParams()
     console.log(categoryId)
 
