@@ -16,8 +16,6 @@ const ItemDetail = ({productDetail}) => {
 const { addItem , isInCart } = useContext (CartContext)
 
 
-
-
 const {nombre, img, precio, desc} = productDetail
 
 const navigate = useNavigate()

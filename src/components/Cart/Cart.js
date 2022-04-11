@@ -1,6 +1,6 @@
 import { useContext } from "react"
-import { CartContext } from "./context/CartContext"
-import {BsFillTrashFill} from 'react-icons/bs'
+import { CartContext } from "../../context/CartContext"
+
 
 const Cart = () => {
 
@@ -22,7 +22,7 @@ const Cart = () => {
                 className="btn btn-danger"
                 onClick={() => removeItem (item.id)}
                 >
-                    <BsFillTrashFill/>
+                    <ion-icon name="trash-outline"></ion-icon>
                 </button>
             </div>
             ))
