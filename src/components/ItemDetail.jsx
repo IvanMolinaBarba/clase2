@@ -6,14 +6,14 @@ import Select from './Select/Select'
 import { Link } from 'react-router-dom';
 
 const options = [
-  {value: 'rojo', text: 'Rojo'},
-  {value: 'verde', text: 'Verde'},
-  {value: 'azul', text: 'Azul'},
+  {value: 'holo', text: 'Holo'},
+  {value: 'damaged', text: 'Damaged'},
+  {value: 'played', text: 'Played'},
 ]
 
 
 const ItemDetail = ({productDetail}) => {
-const {id ,stock , nombre, img, precio, desc} = productDetail
+const {id ,stock , nombre, img, precio, category, desc} = productDetail
 const { addItem , isInCart } = useContext (CartContext)
 
 
@@ -25,7 +25,7 @@ const handleNavigate = () => {
 
 
 const [cantidad,setCantidad] = useState(1)
-const [color,setColor] = useState('rojo')
+const [color,setColor] = useState('holo')
 
 const agregarAlCarrito =  (cantidad) => {
   const itemToAdd = {

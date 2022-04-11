@@ -13,8 +13,8 @@ const Cart = () => {
             <hr/>
 
             {
-            cart.map((item) =>(
-                <div key={item.id}>
+            cart.map((item) => (
+            <div key={item.id}>
                 <h4>{item.nombre}</h4>   
                 <p>Cantidad : {item.cantidad}</p> 
                 <h5>Precio: $ {item.precio * item.cantidad} </h5>
@@ -24,6 +24,7 @@ const Cart = () => {
                 >
                     <ion-icon name="trash-outline"></ion-icon>
                 </button>
+                <hr/>
             </div>
             ))
             
