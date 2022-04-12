@@ -27,7 +27,7 @@ const handleNavigate = () => {
 const [cantidad,setCantidad] = useState(0)
 const [color,setColor] = useState('holo')
 
-const agregarAlCarrito =  (cantidad) => {
+const agregarAlCarrito = () => {
   const itemToAdd = {
     id,
     nombre,
