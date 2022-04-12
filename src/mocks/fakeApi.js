@@ -27,7 +27,7 @@ const productos = [
         category: 'Hierba'
     },
     {
-        nombre: 'Pikachu',
+        nombre: 'Raichu',
         id: 4,
         desc: 'Cuando se juntan varios de estos Pokémon, su electricidad puede causar tormentas de rayos.',
         precio: 4500,
@@ -64,7 +64,7 @@ const productos = [
         category: 'Tierra'
     },
     {
-        nombre: 'Dragonait',
+        nombre: 'Dragonair',
         id: 8,
         desc: 'Muy rara vez se logra ver a este Pokémon marino. Se dice que su intelignecia es parecida a la de los humanos.',
         precio: 6500,

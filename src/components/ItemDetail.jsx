@@ -24,7 +24,7 @@ const handleNavigate = () => {
 }
 
 
-const [cantidad,setCantidad] = useState(1)
+const [cantidad,setCantidad] = useState(0)
 const [color,setColor] = useState('holo')
 
 const agregarAlCarrito =  (cantidad) => {
@@ -38,7 +38,7 @@ const agregarAlCarrito =  (cantidad) => {
   }
 
   addItem(itemToAdd)
-
+  cantidad > 0 && addItem(itemToAdd)
 }
 
 
@@ -49,12 +49,15 @@ const agregarAlCarrito =  (cantidad) => {
         <p>{desc}</p>
         <h4>Precio : ${precio}</h4>
         <small>Stock: {stock}</small>
+        { stock === 0 && <p style={{color: 'holo', fontWeight: '700'}}>¡Item sin stock!</p> }
 
         <Select
           options={options}
           onSelect={setColor}
-        />
+    />
 
+
+<>
       {
         !isInCart(id)
           ? <ItemCount
@@ -62,11 +65,11 @@ const agregarAlCarrito =  (cantidad) => {
           cantidad = {cantidad}
           setCantidad = {setCantidad}
           onAdd={agregarAlCarrito}
-            />
+          />
 
         :  <Link to="/cart" className="btn btn-success d-block my-3">Terminar compra</Link>
       }
-
+</>
       
         <hr/>
             <button className="btn btn-outline-primary" onClick={handleNavigate}>Volver</button>
