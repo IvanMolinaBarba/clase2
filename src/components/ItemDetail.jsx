@@ -13,7 +13,7 @@ const options = [
 
 
 const ItemDetail = ({productDetail}) => {
-const {id ,stock , nombre, img, precio, category, desc} = productDetail
+const {id ,stock , nombre, img, precio, desc} = productDetail
 const { addItem , isInCart } = useContext (CartContext)
 
 
