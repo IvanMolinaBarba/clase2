@@ -19,6 +19,8 @@ const Nosotros = () => {
         <div onClick={handleClick}>
             <h2>Nosotros</h2>
             <hr/>
+            <h3>Somos una empresa dedicada a la compra y venta de Cartas Pokemon Originales</h3>
+            <hr/>
         </div>
     )
 }

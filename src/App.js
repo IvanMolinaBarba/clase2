@@ -7,8 +7,11 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Contacto from "./components/Contacto/Contacto";
 import Nosotros from "./components/Nosotros/Nosotros";
+import Productos from "./components/Productos/Productos";
 import Cart from "./components/Cart/Cart";
 import { CartProvider } from "./context/CartContext";
+import Checkout from "./components/Checkout/Checkout";
+
 
 
 function App() {
@@ -26,7 +29,10 @@ function App() {
             <Route path="/detail/:itemId" element={ <ItemDetailContainer/> } />
             <Route path="/contacto" element={ <Contacto/> }/>
             <Route path="/nosotros" element={ <Nosotros/> }/>
+            <Route path="/productos" element={ <Productos/> }/>
+        
             <Route path="/cart" element={ <Cart/> }/>
+            <Route path="/checkout" element={ <Checkout/> }/>
 
             <Route path="*" element={ <Navigate to="/"/> }/>
           </Routes>

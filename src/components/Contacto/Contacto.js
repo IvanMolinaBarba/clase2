@@ -30,6 +30,8 @@ const Contacto = () => {
             <h2>Contacto</h2>
             <hr/>
 
+            <h3>Llamanos o mandanos un whatsapp al 1168528236</h3>
+            <hr/>
             {
                 isMobile
                 ? <h4>Estoy en Mobile</h4>
