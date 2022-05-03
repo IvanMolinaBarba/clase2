@@ -11,7 +11,7 @@ import { Link } from "react-router-dom"
 
 const NavBar = () => {
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
         <Container>
         <Link to="/">
         <img
@@ -23,16 +23,16 @@ const NavBar = () => {
       /></Link>
       
   </Container>
-      <Container>
+      <Container >
       
        
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-                <Link to="/" className="header-link">Cartas Pokemon</Link>
-                <Link to="/productos" className="header-link">Productos</Link>
-                <Link to="/nosotros" className="header-link">Nosotros</Link>
-                <Link to="/contacto" className="header-link">Contacto</Link>
+        <Navbar.Collapse id="responsive-navbar-nav"  >
+          <Nav className="me-auto " >
+                <Link to="/" className="header-link p-2 m-2 text-link">Cartas Pokemon</Link>
+                <Link to="/productos" className="header-link p-2 m-2 text-link">Productos</Link>
+                <Link to="/nosotros" className="header-link p-2 m-2 text-link">Nosotros</Link>
+                <Link to="/contacto" className="header-link p-2 m-2 text-link">Contacto</Link>
             
           </Nav>
           <Nav>

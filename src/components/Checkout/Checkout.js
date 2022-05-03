@@ -14,6 +14,7 @@ const Checkout = () => {
     const [values, setValues] = useState({
         nombre: '',
         email: '',
+        repetiremail: '',
         tel: ''
     })
 
@@ -95,6 +96,17 @@ const Checkout = () => {
                     name='email'
                     onChange={handleInputChange}
                 />
+
+                <input
+                    className="form-control my-2"
+                    type={'Repetiremail'}
+                    placeholder='Confirma tu email'
+                    value={values.confemail}
+                    name='repetir-email'
+                    onChange={handleInputChange}
+                />
+
+
                 <input
                     className="form-control my-2"
                     type={'tel'}

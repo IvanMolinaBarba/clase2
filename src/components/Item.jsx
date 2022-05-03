@@ -9,9 +9,7 @@ const Item = ( {producto}) => {
             <Card.Img variant="top" src={producto.img} alt={producto.nombre}/>
             <Card.Body>
                 <Card.Title>{producto.nombre}</Card.Title>
-                {/* <Card.Text>
-                   {producto.desc}
-                </Card.Text> */}
+              
                 <Card.Text>
                     Precio: ${producto.precio}
                 </Card.Text>

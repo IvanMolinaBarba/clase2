@@ -67,7 +67,7 @@ const agregarAlCarrito = () => {
           onAdd={agregarAlCarrito}
           />
 
-        :  <Link to="/cart" className="btn btn-success d-block my-3">Terminar compra</Link>
+        :  <Link to="/cart" className="btn btn-success d-block m-4">Terminar compra</Link>
       }
 </>
       

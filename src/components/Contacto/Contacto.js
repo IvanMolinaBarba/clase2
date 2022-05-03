@@ -35,7 +35,7 @@ const Contacto = () => {
             {
                 isMobile
                 ? <h4>Estoy en Mobile</h4>
-                : <h4>Estoy en Desktop</h4>
+                : <h4>POKECARDS</h4>
             }
         </div>
     )
